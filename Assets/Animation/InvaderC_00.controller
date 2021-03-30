@@ -1,5 +1,30 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+=======
+--- !u!1107 &-6545885278928784256
+AnimatorStateMachine:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Base Layer
+  m_ChildStates:
+  - serializedVersion: 1
+    m_State: {fileID: 6287750552564832256}
+    m_Position: {x: 200, y: 0, z: 0}
+  m_ChildStateMachines: []
+  m_AnyStateTransitions: []
+  m_EntryTransitions: []
+  m_StateMachineTransitions: {}
+  m_StateMachineBehaviours: []
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
+  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
+  m_DefaultState: {fileID: 6287750552564832256}
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -12,7 +37,11 @@ AnimatorController:
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
+<<<<<<< HEAD
     m_StateMachine: {fileID: 612650896748341702}
+=======
+    m_StateMachine: {fileID: -6545885278928784256}
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -22,6 +51,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+<<<<<<< HEAD
 --- !u!1107 &612650896748341702
 AnimatorStateMachine:
   serializedVersion: 5
@@ -45,6 +75,9 @@ AnimatorStateMachine:
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1945098162678202903}
 --- !u!1102 &1945098162678202903
+=======
+--- !u!1102 &6287750552564832256
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -64,7 +97,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< HEAD
   m_Motion: {fileID: 7400000, guid: 07739946ff2c6104cab2e5f513989f01, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: b2e589c5fb5ff45ae841641e6a3a045e, type: 2}
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

@@ -6,10 +6,7 @@ public class SpawnInvaders : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject invasorA;
-
-    [SerializeField]
-    GameObject invasorB;
+    GameObject[] invasores;
 
     [SerializeField]
     GameObject invasorC;
@@ -19,13 +16,28 @@ public class SpawnInvaders : MonoBehaviour
 
     [SerializeField]
     float xMin = -3f;
+<<<<<<< HEAD
     
+=======
+
+    [SerializeField]
+    float yMin = -0.5f;
+
+    [SerializeField]
+    float xInc = 1f;
+
+    [SerializeField]
+    float yInc = 0.5f;
+
+
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
     void Awake()
     {
         /*
          * "Pega" neste objecto, duplica e coloca-o "naquele" sítio
          */
 
+<<<<<<< HEAD
         float x = xMin;
         for (int i = 1; i <= nInvasores; i++)
         {
@@ -65,6 +77,19 @@ public class SpawnInvaders : MonoBehaviour
             GameObject newInvaderC = Instantiate(invasorC, transform);
             newInvaderC.transform.position = new Vector3(x, 1.5f, 0f);
             x += 1f;
+=======
+        float y = yMin;
+        for(int line = 0; line < invasores.Length; line++)
+        {
+            float x = xMin;
+            for (int i = 1; i <= nInvasores; i++)
+            {
+                GameObject newInvader = Instantiate(invasores[line], transform);
+                newInvader.transform.position = new Vector3(x, y, 0f);
+                x += xInc;
+            }
+            y += yInc;
+>>>>>>> 7829f3c565d27d4638c5139fca83f254c766fc56
         }
     }
     
