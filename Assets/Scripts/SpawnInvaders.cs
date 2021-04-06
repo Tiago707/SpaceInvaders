@@ -27,6 +27,24 @@ public class SpawnInvaders : MonoBehaviour
     float yInc = 0.5f;
 
     [SerializeField]
+    int VidaTank = 10;
+
+    [SerializeField]
+    float Tempo = 0f;
+
+    [SerializeField]
+    float TempoParaAndar = 0.5f;
+
+    [SerializeField]
+    float Velocidade = 0.05f;
+
+    [SerializeField]
+    float Descida = -0.5f;
+
+    [SerializeField]
+    int Movimentos = 0;
+
+    [SerializeField]
     float probabilidadeDeIndestrutivel = 0.15f;
 
     void Awake()
@@ -55,4 +73,53 @@ public class SpawnInvaders : MonoBehaviour
             y += yInc;
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (tag == "Destrutivel")
+        {
+            if (collision.gameObject.tag == "ProjectilAmigo")
+            {
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+            }
+        }
+
+        if (tag == "Indestrutivel")
+        {
+            if (collision.gameObject.tag == "ProjectilAmigo")
+            {
+                Destroy(collision.gameObject);
+                VidaTank = VidaTank - 1;
+            }
+            if (collision.gameObject.tag == "ProjectilAmigo")
+            {
+                if (VidaTank <= 0)
+                {
+                    Destroy(gameObject);
+                    Destroy(collision.gameObject);
+                }
+            }
+        }
+    }
+    void Update ()
+    {
+        Tempo += Time.deltaTime;
+        if (Tempo > TempoParaAndar && Movimentos <5) 
+        {
+            transform.Translate(new Vector3(Velocidade, 0, 0));
+            Tempo = 0;
+            Movimentos++;
+        }
+
+        if(Movimentos == 5)
+        {
+            transform.Translate(new Vector3(0, Descida , 0));
+            Movimentos = -1;
+            Velocidade = -Velocidade;
+            Tempo = 0;
+
+        }
+
+    }
 }
+       

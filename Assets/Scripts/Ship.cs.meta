@@ -3,7 +3,11 @@ guid: ef7f3d07fce794c78850693978177df2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fire: {instanceID: 0}
+  - nozzle: {instanceID: 0}
+  - Hpvalor: {fileID: 2391703667208335944, guid: b30c24edc8df33b49b5eb85e2d16c860,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

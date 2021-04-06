@@ -8,10 +8,13 @@ public class Invader : MonoBehaviour
     GameObject fire;
 
     [SerializeField]
-    float cadencia = 1.5f;
+    float cadencia = 50f;
+
+    [SerializeField]
+    int VidaTanks = 10;
 
     float tempoQuePassou = 0f;
-
+   
     void Update()
     {
         if(tag == "Destrutivel")
@@ -20,23 +23,38 @@ public class Invader : MonoBehaviour
             if (tempoQuePassou >= cadencia)
             {
                 Instantiate(fire, transform.position, transform.rotation);
-                tempoQuePassou = 0f;
+                tempoQuePassou = Random.Range(0f, 3f);
             }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(tag == "Destrutivel")
+
+        if (tag == "Destrutivel")
         {
             if (collision.gameObject.tag == "ProjectilAmigo")
             {
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
             }
-        } else
+        }
+
+        if (tag == "Indestrutivel")
         {
-            Destroy(collision.gameObject);
+            if (collision.gameObject.tag == "ProjectilAmigo")
+            {
+                Destroy(collision.gameObject);
+                VidaTanks = VidaTanks - 1;
+            }
+            if (collision.gameObject.tag == "ProjectilAmigo")
+            {
+                if (VidaTanks <= 0)
+                {
+                    Destroy(gameObject);
+                    Destroy(collision.gameObject);
+                }
+            }
         }
     }
 }
